@@ -1,26 +1,16 @@
 # 레시피 \(/recipe\)
 
 ```text
-RecipeStep {
-  "image": String,
-  "title": String,
-  "content": String
-}
-```
-
-```text
 BriefRecipe {
   "name": String,
   "thumbnail": String,
   "meat_type": MeatType,
   "duration": Number,
-  "difficulty": String,
+  "difficulty": Difficulty,
   "created_at": Timestamp,
   "heart": Heart
 }
-```
 
-```text
 Recipe {
   "thumbnail": String,
   "name": String,
@@ -28,12 +18,18 @@ Recipe {
   "description": String,
   "author": BriefCommunityUser,
   "duration": Number,
-  "difficulty": String,
+  "difficulty": Difficulty,
   "heart": Heart,
   "youtube": String,
   "ingredient": Ingredient[],
   "brief_content": String[],
   "linked_post": BriefPost[]
+}
+
+RecipeStep {
+  "image": String,
+  "title": String,
+  "content": String
 }
 ```
 
@@ -121,6 +117,88 @@ Get Recipe Steps
 
 ```
 RecipeStep[]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="" path="/recipe" %}
+{% api-method-summary %}
+Create Recipe
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="ingredient" type="array" required=false %}
+Ingredient\[\]
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="youtube" type="string" required=false %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="difficulty" type="number" required=true %}
+Difficulty List에서 받아온 난이도를 숫자로 입력해주세요
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="duration" type="string" required=true %}
+조리시간을 초단위로 입력해주세요
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="description" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="name" type="string" required=true %}
+
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="thumbnail" type="string" required=true %}
+Base64 encoded image
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+Recipe
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="get" host="" path="/recipe/difficulty" %}
+{% api-method-summary %}
+Get Difficulty Lists
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+Difficulty[]
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
