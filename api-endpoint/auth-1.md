@@ -33,17 +33,22 @@ Cake successfully retrieved.
 {% endapi-method-response-example-description %}
 
 ```
-{    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
+{
+    "accessToken": String,
+    "refreshToken": String
+}
 ```
 {% endapi-method-response-example %}
 
-{% api-method-response-example httpCode=404 %}
+{% api-method-response-example httpCode=403 %}
 {% api-method-response-example-description %}
-Could not find a cake matching this query.
+생성중인 Username이 이미 존재합니다
 {% endapi-method-response-example-description %}
 
 ```
-{    "message": "Ain't no cake like that."}
+{
+    "error": "USERNAME_ALREADY_EXIST"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
@@ -61,11 +66,15 @@ Login with Username and Password
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="password" type="string" required=true %}
 
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+
+{% api-method-parameter name="username" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -75,7 +84,69 @@ Login with Username and Password
 {% endapi-method-response-example-description %}
 
 ```
+{
+    "accessToken": String,
+    "refreshToken": String
+}
+```
+{% endapi-method-response-example %}
 
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+Username과 Password이 일치하는 계정을 찾을 수 없습니다
+{% endapi-method-response-example-description %}
+
+```
+{
+    "error": "ACCOUNT_NOT_MATCHED"
+}
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+
+{% api-method method="post" host="" path="/user/login" %}
+{% api-method-summary %}
+Login with refreshToken
+{% endapi-method-summary %}
+
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="refreshToken" type="string" required=true %}
+
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+{
+    "accessToken": String,
+    "refreshToken": String
+}
+```
+{% endapi-method-response-example %}
+
+{% api-method-response-example httpCode=400 %}
+{% api-method-response-example-description %}
+refreshToken이 올바르지 않습니다
+{% endapi-method-response-example-description %}
+
+```
+{
+    "error": "TOKEN_NOT_CORRECT"
+}
 ```
 {% endapi-method-response-example %}
 {% endapi-method-response %}
