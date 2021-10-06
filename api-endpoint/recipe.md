@@ -1,6 +1,14 @@
 # 레시피 \(/recipe\)
 
 ```text
+RecipeStep {
+  "image": String,
+  "title": String,
+  "content": String
+}
+```
+
+```text
 BriefRecipe {
   "name": String,
   "thumbnail": String,
@@ -87,5 +95,35 @@ Recipe
 {% endapi-method-spec %}
 {% endapi-method %}
 
+{% api-method method="get" host="" path="/recipe/:id/step" %}
+{% api-method-summary %}
+Get Recipe Steps
+{% endapi-method-summary %}
 
+{% api-method-description %}
+
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=false %}
+
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
+```
+RecipeStep[]
+```
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
