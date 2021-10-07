@@ -18,6 +18,12 @@ CommunityUser {
   "uploaded_post": BriefPost[],
   "uploaded_recipe": BriefRecipe[]
 }
+
+User {
+  "email": String,
+  "name": String,
+  "photo": String
+}
 ```
 
 {% api-method method="get" host="" path="/user/me" %}
