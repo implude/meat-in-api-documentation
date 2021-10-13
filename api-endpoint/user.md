@@ -2,12 +2,12 @@
 description: 사용자 인증에 관련된 라우트
 ---
 
-# 사용자 \(/user\)
+# 사용자 (/user)
 
-```text
+```
 BriefCommunityUser = Me {
   "name": String,
-  "profileImage": String,
+  "photo": String,
   "rep_badge": BriefBadge,
 }
 
@@ -26,129 +26,74 @@ User {
 }
 ```
 
-{% api-method method="get" host="" path="/user/me" %}
-{% api-method-summary %}
-Get my info
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/user/me" method="get" summary="Get my info" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="Authorization" type="string" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 Me
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="patch" host="" path="/user/me" %}
-{% api-method-summary %}
-Modify My Info
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="" path="/user/me" method="patch" summary="Modify My Info" %}
+{% swagger-description %}
 This endpoint allows you to get free cakes.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% endswagger-parameter %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
+{% swagger-parameter in="body" name="" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="email" type="string" required=false %}
+{% swagger-parameter in="body" name="email" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="name" type="string" required=false %}
+{% swagger-parameter in="body" name="name" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="image" type="string" required=false %}
+{% swagger-parameter in="body" name="image" type="string" %}
 Encode profile image with base64
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 Me
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-올바르지 않은 업데이트 데이터입니다
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="올바르지 않은 업데이트 데이터입니다" %}
 ```
 {
     "error": "FIELD_VALIDATION_FAILED"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="" path="/user/:id" %}
-{% api-method-summary %}
-Get Community User
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/user/:id" method="get" summary="Get Community User" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="id" type="string" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 CommunityUser
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

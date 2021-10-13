@@ -1,8 +1,8 @@
-# 포스트 \(/post\)
+# 포스트 (/post)
 
-```text
+```
 Comment {
-    "title": String,
+
     "created_at": Timestamp,
     "author": BriefCommunityUser,
     "content": String,
@@ -28,155 +28,85 @@ BriefPost {
 }
 ```
 
-{% api-method method="get" host="" path="/post/curated" %}
-{% api-method-summary %}
-Get Curated Post
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/post/curated" method="get" summary="Get Curated Post" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
-
-{% api-method-spec %}
-{% api-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 BriefPost[]
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="" path="/post/:id" %}
-{% api-method-summary %}
-Get Specific Post
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/post/:id" method="get" summary="Get Specific Post" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="id" type="string" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 Post
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="" path="/post" %}
-{% api-method-summary %}
-Create Post
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/post" method="post" summary="Create Post" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
-
-{% api-method-body-parameters %}
-{% api-method-parameter name="linked\_recipe" type="string" required=true %}
+{% swagger-parameter in="body" name="linked_recipe" type="string" %}
 Recipe Id
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="content" type="string" required=true %}
+{% swagger-parameter in="body" name="content" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="title" type="string" required=true %}
+{% swagger-parameter in="body" name="title" type="string" %}
 
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="photo" type="string" required=true %}
+{% swagger-parameter in="body" name="photo" type="string" %}
 base64 encoded image
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 Post
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="get" host="" path="/post/:id/comment" %}
-{% api-method-summary %}
-Create Comment
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/post/:id/comment" method="get" summary="Create Comment" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="path" name="id" type="string" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="id" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+{% swagger-parameter in="header" name="Authorization" type="string" %}
 
-{% api-method-headers %}
-{% api-method-parameter name="Authorization" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-headers %}
+{% swagger-parameter in="body" name="content" type="string" %}
 
-{% api-method-body-parameters %}
-{% api-method-parameter name="content" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
-
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}
