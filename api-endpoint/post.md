@@ -2,7 +2,6 @@
 
 ```
 Comment {
-
     "created_at": Timestamp,
     "author": BriefCommunityUser,
     "content": String,
@@ -61,19 +60,19 @@ Post
 
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="linked_recipe" type="string" %}
+{% swagger-parameter in="body" name="linked_recipe" type="string" required="true" %}
 Recipe Id
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="content" type="string" %}
+{% swagger-parameter in="body" name="content" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="title" type="string" %}
+{% swagger-parameter in="body" name="title" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
@@ -88,20 +87,20 @@ Post
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="" path="/post/:id/comment" method="get" summary="Create Comment" %}
+{% swagger baseUrl="" path="/post/:id/comment" method="post" summary="Create Comment" %}
 {% swagger-description %}
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="id" type="string" %}
+{% swagger-parameter in="path" name="id" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="content" type="string" %}
+{% swagger-parameter in="body" name="content" type="string" required="true" %}
 
 {% endswagger-parameter %}
 

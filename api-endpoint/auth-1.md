@@ -1,155 +1,94 @@
-# 인증 \(/auth\)
+# 인증 (/auth)
 
-{% api-method method="post" host="" path="/user" %}
-{% api-method-summary %}
-Create User
-{% endapi-method-summary %}
-
-{% api-method-description %}
+{% swagger baseUrl="" path="/user" method="post" summary="Create User" %}
+{% swagger-description %}
 This endpoint allows you to get free cakes.
-{% endapi-method-description %}
+{% endswagger-description %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="email" type="string" required=true %}
+{% swagger-parameter in="body" name="email" type="string" required="true" %}
 이메일
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="password" type="string" required=true %}
+{% swagger-parameter in="body" name="password" type="string" required="true" %}
 비밀번호
-{% endapi-method-parameter %}
+{% endswagger-parameter %}
 
-{% api-method-parameter name="username" type="string" required=true %}
+{% swagger-parameter in="body" name="username" type="string" required="true" %}
 사용자 이름
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
+{% endswagger-parameter %}
 
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-Cake successfully retrieved.
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="Cake successfully retrieved." %}
 ```
 {
     "accessToken": String,
     "refreshToken": String
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=403 %}
-{% api-method-response-example-description %}
-생성중인 Username이 이미 존재합니다
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="403" description="생성중인 Username이 이미 존재합니다" %}
 ```
 {
     "error": "USERNAME_ALREADY_EXIST"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="" path="/user/login" %}
-{% api-method-summary %}
-Login with Username and Password
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/user/login" method="post" summary="Login with Username and Password" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="body" name="password" type="string" required="true" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="password" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
+{% swagger-parameter in="body" name="username" type="string" required="true" %}
 
-{% api-method-parameter name="username" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "accessToken": String,
     "refreshToken": String
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-Username과 Password이 일치하는 계정을 찾을 수 없습니다
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="Username과 Password이 일치하는 계정을 찾을 수 없습니다" %}
 ```
 {
     "error": "ACCOUNT_NOT_MATCHED"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
+{% endswagger-response %}
+{% endswagger %}
 
-{% api-method method="post" host="" path="/user/login" %}
-{% api-method-summary %}
-Login with refreshToken
-{% endapi-method-summary %}
+{% swagger baseUrl="" path="/user/login" method="post" summary="Login with refreshToken" %}
+{% swagger-description %}
 
-{% api-method-description %}
+{% endswagger-description %}
 
-{% endapi-method-description %}
+{% swagger-parameter in="body" name="refreshToken" type="string" required="true" %}
 
-{% api-method-spec %}
-{% api-method-request %}
-{% api-method-body-parameters %}
-{% api-method-parameter name="refreshToken" type="string" required=true %}
+{% endswagger-parameter %}
 
-{% endapi-method-parameter %}
-{% endapi-method-body-parameters %}
-{% endapi-method-request %}
-
-{% api-method-response %}
-{% api-method-response-example httpCode=200 %}
-{% api-method-response-example-description %}
-
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="200" description="" %}
 ```
 {
     "accessToken": String,
     "refreshToken": String
 }
 ```
-{% endapi-method-response-example %}
+{% endswagger-response %}
 
-{% api-method-response-example httpCode=400 %}
-{% api-method-response-example-description %}
-refreshToken이 올바르지 않습니다
-{% endapi-method-response-example-description %}
-
+{% swagger-response status="400" description="refreshToken이 올바르지 않습니다" %}
 ```
 {
     "error": "TOKEN_NOT_CORRECT"
 }
 ```
-{% endapi-method-response-example %}
-{% endapi-method-response %}
-{% endapi-method-spec %}
-{% endapi-method %}
-
+{% endswagger-response %}
+{% endswagger %}

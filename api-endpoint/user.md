@@ -31,7 +31,7 @@ User {
 
 {% endswagger-description %}
 
-{% swagger-parameter in="path" name="Authorization" type="string" %}
+{% swagger-parameter in="path" name="Authorization" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
@@ -47,11 +47,11 @@ Me
 This endpoint allows you to get free cakes.
 {% endswagger-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" %}
+{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="" type="string" %}
+{% swagger-parameter in="body" name="password" type="string" %}
 
 {% endswagger-parameter %}
 
