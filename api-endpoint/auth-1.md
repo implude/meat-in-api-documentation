@@ -43,7 +43,7 @@ Base64 encoded Image
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger baseUrl="" path="/user/login" method="post" summary="Login with Username and Password" %}
+{% swagger baseUrl="" path="/user/login" method="post" summary="Login with email and Password" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -52,7 +52,7 @@ Base64 encoded Image
 
 {% endswagger-parameter %}
 
-{% swagger-parameter in="body" name="username" type="string" required="true" %}
+{% swagger-parameter in="body" name="email" type="string" required="true" %}
 
 {% endswagger-parameter %}
 
@@ -65,7 +65,7 @@ Base64 encoded Image
 ```
 {% endswagger-response %}
 
-{% swagger-response status="400" description="Username과 Password이 일치하는 계정을 찾을 수 없습니다" %}
+{% swagger-response status="400" description="Email과 Password이 일치하는 계정을 찾을 수 없습니다" %}
 ```
 {
     "error": "ACCOUNT_NOT_MATCHED"

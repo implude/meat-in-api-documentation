@@ -110,3 +110,23 @@ Comment
 ```
 {% endswagger-response %}
 {% endswagger %}
+
+{% swagger method="get" path="/post/:id/heart" baseUrl="" summary="Heart Post" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" required="true" %}
+
+{% endswagger-parameter %}
+{% endswagger %}
+
+{% swagger method="get" path="/post/:id/bookmark" baseUrl="" summary="Bookmark Post" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" required="true" %}
+
+{% endswagger-parameter %}
+{% endswagger %}
