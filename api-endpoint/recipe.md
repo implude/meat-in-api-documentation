@@ -1,6 +1,6 @@
-# 레시피 (/recipe)
+# 레시피 \(/recipe\)
 
-```
+```text
 BriefRecipe {
   "name": String,
   "thumbnail": String,
@@ -33,102 +33,181 @@ RecipeStep {
 }
 ```
 
-{% swagger baseUrl="" path="/recipe/curated" method="get" summary="Get Curated Recipe" %}
-{% swagger-description %}
-레시피 목록을 반환합니다
-{% endswagger-description %}
+{% api-method method="get" host="" path="/recipe/curated" %}
+{% api-method-summary %}
+Get Curated Recipe
+{% endapi-method-summary %}
 
-{% swagger-response status="200" description="Cake successfully retrieved." %}
+{% api-method-description %}
+레시피 목록을 반환합니다
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+Cake successfully retrieved.
+{% endapi-method-response-example-description %}
+
 ```
 BriefRecipe[]
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="" path="/recipe/:id" method="get" summary="Get Specific Recipe" %}
-{% swagger-description %}
+{% api-method method="get" host="" path="/recipe/:id" %}
+{% api-method-summary %}
+Get Specific Recipe
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="path" name="id" type="string" required="true" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=false %}
 
-{% swagger-response status="200" description="" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```
 Recipe
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="" path="/recipe/:id/step" method="get" summary="Get Recipe Steps" %}
-{% swagger-description %}
+{% api-method method="get" host="" path="/recipe/:id/step" %}
+{% api-method-summary %}
+Get Recipe Steps
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="path" name="id" type="string" required="true" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-path-parameters %}
+{% api-method-parameter name="id" type="string" required=false %}
 
-{% swagger-response status="200" description="" %}
+{% endapi-method-parameter %}
+{% endapi-method-path-parameters %}
+{% endapi-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```
 RecipeStep[]
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="" path="/recipe" method="post" summary="Create Recipe" %}
-{% swagger-description %}
+{% api-method method="post" host="" path="/recipe" %}
+{% api-method-summary %}
+Create Recipe
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-parameter in="header" name="Authorization" type="string" required="true" %}
+{% endapi-method-description %}
 
-{% endswagger-parameter %}
+{% api-method-spec %}
+{% api-method-request %}
+{% api-method-headers %}
+{% api-method-parameter name="Authorization" type="string" required=true %}
 
-{% swagger-parameter in="body" name="ingredient" type="array" required="true" %}
-Ingredient[]
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 
-{% swagger-parameter in="body" name="youtube" type="string" %}
+{% api-method-body-parameters %}
+{% api-method-parameter name="ingredient" type="array" required=false %}
+Ingredient\[\]
+{% endapi-method-parameter %}
 
-{% endswagger-parameter %}
+{% api-method-parameter name="youtube" type="string" required=false %}
 
-{% swagger-parameter in="body" name="difficulty" type="number" required="true" %}
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="difficulty" type="number" required=true %}
 Difficulty List에서 받아온 난이도를 숫자로 입력해주세요
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
 
-{% swagger-parameter in="body" name="duration" type="string" required="true" %}
+{% api-method-parameter name="duration" type="string" required=true %}
 조리시간을 초단위로 입력해주세요
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
 
-{% swagger-parameter in="body" name="description" type="string" required="true" %}
+{% api-method-parameter name="description" type="string" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
 
-{% swagger-parameter in="body" name="name" type="string" required="true" %}
+{% api-method-parameter name="name" type="string" required=true %}
 
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
 
-{% swagger-parameter in="body" name="thumbnail" type="string" required="true" %}
+{% api-method-parameter name="thumbnail" type="string" required=true %}
 Base64 encoded image
-{% endswagger-parameter %}
+{% endapi-method-parameter %}
+{% endapi-method-body-parameters %}
+{% endapi-method-request %}
 
-{% swagger-response status="200" description="" %}
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```
 Recipe
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
 
-{% swagger baseUrl="" path="/recipe/difficulty" method="get" summary="Get Difficulty Lists" %}
-{% swagger-description %}
+{% api-method method="get" host="" path="/recipe/difficulty" %}
+{% api-method-summary %}
+Get Difficulty Lists
+{% endapi-method-summary %}
 
-{% endswagger-description %}
+{% api-method-description %}
 
-{% swagger-response status="200" description="" %}
+{% endapi-method-description %}
+
+{% api-method-spec %}
+{% api-method-request %}
+
+{% api-method-response %}
+{% api-method-response-example httpCode=200 %}
+{% api-method-response-example-description %}
+
+{% endapi-method-response-example-description %}
+
 ```
 Difficulty[]
 ```
-{% endswagger-response %}
-{% endswagger %}
+{% endapi-method-response-example %}
+{% endapi-method-response %}
+{% endapi-method-spec %}
+{% endapi-method %}
+

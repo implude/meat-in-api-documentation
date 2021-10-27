@@ -1,20 +1,28 @@
-# 인증 (/auth)
+# 인증 (/user)
 
 {% swagger baseUrl="" path="/user" method="post" summary="Create User" %}
 {% swagger-description %}
 This endpoint allows you to get free cakes.
 {% endswagger-description %}
 
-{% swagger-parameter in="body" name="email" type="string" required="true" %}
-이메일
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="password" type="string" required="true" %}
-비밀번호
-{% endswagger-parameter %}
-
-{% swagger-parameter in="body" name="username" type="string" required="true" %}
+{% swagger-parameter in="body" name="name" type="string" required="true" %}
 사용자 이름
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="photo" type="string" required="true" %}
+Base64 encoded Image
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="email" type="string" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" name="password" required="true" %}
+
+{% endswagger-parameter %}
+
+{% swagger-parameter in="body" %}
+
 {% endswagger-parameter %}
 
 {% swagger-response status="200" description="Cake successfully retrieved." %}
