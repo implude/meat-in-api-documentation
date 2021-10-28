@@ -133,7 +133,7 @@ Difficulty[]
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/recipe/:id/heart" baseUrl="" summary="Heart Recipe" %}
+{% swagger method="post" path="/recipe/:id/heart" baseUrl="" summary="Heart Recipe" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -143,7 +143,7 @@ Difficulty[]
 {% endswagger-parameter %}
 {% endswagger %}
 
-{% swagger method="get" path="/recipe/:id/bookmark" baseUrl="" summary="Bookmark Post" %}
+{% swagger method="delete" path="/recipe/:id/heart" baseUrl="" summary="Unheart Recipe" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -151,4 +151,24 @@ Difficulty[]
 {% swagger-parameter in="path" name="id" required="true" %}
 
 {% endswagger-parameter %}
+
+{% swagger-parameter in="header" name="Authorization" required="true" %}
+
+{% endswagger-parameter %}
+{% endswagger %}
+
+{% swagger method="post" path="/recipe/:id/bookmark" baseUrl="" summary="Bookmark Recipe" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" required="true" %}
+
+{% endswagger-parameter %}
+{% endswagger %}
+
+{% swagger method="delete" path="/recipe/:id/unbookmark" baseUrl="" summary="Unbookmark Recipe" %}
+{% swagger-description %}
+
+{% endswagger-description %}
 {% endswagger %}

@@ -111,7 +111,7 @@ Comment
 {% endswagger-response %}
 {% endswagger %}
 
-{% swagger method="get" path="/post/:id/heart" baseUrl="" summary="Heart Post" %}
+{% swagger method="post" path="/post/:id/heart" baseUrl="" summary="Heart Post" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -121,7 +121,13 @@ Comment
 {% endswagger-parameter %}
 {% endswagger %}
 
-{% swagger method="get" path="/post/:id/bookmark" baseUrl="" summary="Bookmark Post" %}
+{% swagger method="delete" path="/post/:id/heart" baseUrl="" summary="Unheart Post" %}
+{% swagger-description %}
+
+{% endswagger-description %}
+{% endswagger %}
+
+{% swagger method="post" path="/post/:id/bookmark" baseUrl="" summary="Bookmark Post" %}
 {% swagger-description %}
 
 {% endswagger-description %}
@@ -129,4 +135,10 @@ Comment
 {% swagger-parameter in="path" name="id" required="true" %}
 
 {% endswagger-parameter %}
+{% endswagger %}
+
+{% swagger method="delete" path="" baseUrl="" summary="Unbookmark Post" %}
+{% swagger-description %}
+
+{% endswagger-description %}
 {% endswagger %}
