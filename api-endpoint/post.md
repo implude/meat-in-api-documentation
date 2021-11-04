@@ -137,8 +137,12 @@ Comment
 {% endswagger-parameter %}
 {% endswagger %}
 
-{% swagger method="delete" path="" baseUrl="" summary="Unbookmark Post" %}
+{% swagger method="delete" path="/post/:id/bookmark" baseUrl="" summary="Unbookmark Post" %}
 {% swagger-description %}
 
 {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" required="true" %}
+
+{% endswagger-parameter %}
 {% endswagger %}

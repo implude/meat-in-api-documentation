@@ -1,7 +1,7 @@
 # 레시피 (/recipe)
 
 ```
-BriefRecipe {
+  BriefRecipe {
   "name": String,
   "thumbnail": String,
   "meat_type": MeatType,
@@ -167,8 +167,12 @@ Difficulty[]
 {% endswagger-parameter %}
 {% endswagger %}
 
-{% swagger method="delete" path="/recipe/:id/unbookmark" baseUrl="" summary="Unbookmark Recipe" %}
+{% swagger method="delete" path="/recipe/:id/bookmark" baseUrl="" summary="Unbookmark Recipe" %}
 {% swagger-description %}
 
 {% endswagger-description %}
+
+{% swagger-parameter in="path" name="id" required="true" %}
+
+{% endswagger-parameter %}
 {% endswagger %}
