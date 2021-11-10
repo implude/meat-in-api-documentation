@@ -23,7 +23,9 @@ BriefPost {
   "author": BriefCommunityUser,
   "created_at": Timestamp,
   "heart": Heart,
-  "comment_count": Number
+  "comment_count": Number,
+  "image": String,
+  "content": String
 }
 ```
 
